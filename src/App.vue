@@ -1,25 +1,16 @@
 <template>
-  <ToDo />
+   <ToDo />
 </template>
 
 <script>
-import ToDo from "./components/ToDo.vue";
+import ToDo from './views/ToDo.vue'
 
 export default {
-  name: "App",
-  components: {
-    ToDo,
-  },
-};
+   name: 'App',
+   components: {
+      ToDo,
+   },
+}
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style lang="scss"></style>
