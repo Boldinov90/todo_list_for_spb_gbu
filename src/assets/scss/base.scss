@@ -1,0 +1,12 @@
+@import '@/assets/scss/_normalize.scss';
+@import '@/assets/scss/_fonts.scss';
+@import '@/assets/scss/_variables.scss';
+
+.container {
+   font-family: 'Montserrat', sans-serif;
+   max-width: $container-width;
+   padding: 0 20px;
+   margin: 0 auto;
+   position: relative;
+   color: $standart-text-color;
+}

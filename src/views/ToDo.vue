@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Header from '../components/header/Header.vue'
+import Header from '@/layouts/Header.vue'
 export default {
    name: 'ToDo',
    components: {
@@ -14,4 +14,10 @@ export default {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.wrapper{
+   .header{
+      margin-top: 100px;
+   }
+}
+</style>

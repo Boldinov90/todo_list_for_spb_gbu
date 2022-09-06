@@ -1,0 +1,11 @@
+*{
+   margin: 0;
+   padding: 0;
+}
+button {
+   cursor: pointer;
+}
+button::-moz-focus-inner {
+   padding: 0;
+   border: 0;
+}
