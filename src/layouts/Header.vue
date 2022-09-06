@@ -2,21 +2,30 @@
    <div class="wrapper">
       <div class="header">
          <div class="header__header-top">
-            <HeaderTitle class="header-top__title" :textTitle="'To do list'" />
-            <AddNewTaskButton />
+            <MyTitle class="header-top__title" :textTitle="'To do list'" />
+            <MyCircleAddButton />
+         </div>
+         <div class="header__header-filters">
+            <div class="header-filters__search-by-text">
+               <img
+                  class="search-by-text__icon"
+                  src="../assets/icons/search-icon.svg"
+               />
+               <div class="search-by-text__input"></div>
+            </div>
          </div>
       </div>
    </div>
 </template>
 
 <script>
-import HeaderTitle from '@/components/header/HeaderTitle.vue'
-import AddNewTaskButton from '@/components/header/AddNewTaskButton.vue'
+import MyTitle from '@/components/header/MyTitle.vue'
+import MyCircleAddButton from '@/components/UI/MyCircleAddButton.vue'
 export default {
    name: 'Header',
    components: {
-      HeaderTitle,
-      AddNewTaskButton,
+      MyTitle,
+      MyCircleAddButton,
    },
 }
 </script>
@@ -30,6 +39,15 @@ export default {
          align-items: center;
          .header-top__title {
             margin-left: 40px;
+            font-size: 24px;
+         }
+      }
+      .header__header-filters {
+         .header-filters__search-by-text {
+            .search-by-text__icon {
+            }
+            .search-by-text__input {
+            }
          }
       }
    }

@@ -11,7 +11,7 @@
 
 <script>
 export default {
-   name: 'AddNewTaskButton',
+   name: 'CircleAddButton',
 }
 </script>
 

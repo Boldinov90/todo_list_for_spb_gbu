@@ -15,9 +15,9 @@ export default {
 
 <style lang="scss" scoped>
 .text-title {
+   font-family: 'Montserrat', sans-serif;
    font-style: normal;
    font-weight: 700;
-   font-size: 24px;
    line-height: 132%;
 }
 </style>
