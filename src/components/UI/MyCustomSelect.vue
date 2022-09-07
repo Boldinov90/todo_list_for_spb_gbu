@@ -114,7 +114,7 @@ export default {
             align-items: center;
             border-radius: 4px;
             &:hover {
-               background-color: #f6f9ff;
+               background-color: $accent-background-color;
             }
             .item__text {
                margin-left: 8px;

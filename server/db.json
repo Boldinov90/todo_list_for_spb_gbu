@@ -1,0 +1,94 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "checkbox": false,
+      "description": "Размещение новостей на сайте",
+      "status": {
+        "name": "active",
+        "value": "В работе"
+      },
+      "date": "22.04.22"
+    },
+    {
+      "id": 2,
+      "checkbox": true,
+      "description": "Внедрить Wi-fi для читателей",
+      "status": {
+        "name": "done",
+        "value": "Выполнено"
+      },
+      "date": "25.03.22"
+    },
+    {
+      "id": 3,
+      "checkbox": false,
+      "description": "Отредактировать раздел “Доступная среда“",
+      "status": {
+        "name": "active",
+        "value": "В работе"
+      },
+      "date": "15.03.22"
+    },
+    {
+      "id": 4,
+      "checkbox": true,
+      "description": "Презентация “Информационные технологии“",
+      "status": {
+        "name": "done",
+        "value": "Выполнено"
+      },
+      "date": "15.03.22"
+    },
+    {
+      "id": 5,
+      "checkbox": false,
+      "description": "Счётчики — внедрить дизайн",
+      "status": {
+        "name": "active",
+        "value": "В работе"
+      },
+      "date": "09.03.22"
+    },
+    {
+      "id": 6,
+      "checkbox": true,
+      "description": "Сверстать новый layout",
+      "status": {
+        "name": "done",
+        "value": "Выполнено"
+      },
+      "date": "07.03.22"
+    },
+    {
+      "id": 7,
+      "checkbox": false,
+      "description": "Скролл в новостях",
+      "status": {
+        "name": "active",
+        "value": "В работе"
+      },
+      "date": "01.03.22"
+    },
+    {
+      "id": 8,
+      "checkbox": true,
+      "description": "Форма сброса пароля",
+      "status": {
+        "name": "done",
+        "value": "Выполнено"
+      },
+      "date": "25.02.22"
+    },
+    {
+      "id": 9,
+      "checkbox": false,
+      "description": "Внедрение модуля Chat",
+      "status": {
+        "name": "active",
+        "value": "В работе"
+      },
+      "date": "20.02.22"
+    }
+  ]
+}

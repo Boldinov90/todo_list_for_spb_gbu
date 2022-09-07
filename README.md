@@ -1,13 +1,14 @@
-# todo_list_for_spb_gbu
+# superapp 2.0
 
-## Project setup
+## Установка необходимых для работы пакетов
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+<!-- ### Compiles and hot-reloads for development -->
+### Запуск проекта (одновременный запуск проекта и json-server(а))   
 ```
-npm run serve
+npm run start
 ```
 
 ### Compiles and minifies for production
