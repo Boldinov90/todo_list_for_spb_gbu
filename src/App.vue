@@ -1,5 +1,5 @@
 <template>
-   <div class="container">
+   <div>
       <ToDo />
    </div>
 </template>
@@ -16,7 +16,8 @@ export default {
 </script>
 
 <style lang="scss">
-// #app {
-   
+// .app {
+//    position: relative;
 // }
+
 </style>

@@ -23,11 +23,7 @@ export default {
 
 <style lang="scss" scoped>
 input {
-   font-family: 'Vela Sans', sans-serif;
-   font-style: normal;
-   font-weight: 400;
-   font-size: 14px;
-   line-height: 132%;
+   @extend %styleStandartText;
    border: none;
    &::placeholder {
       color: $placeholder-text-color;
