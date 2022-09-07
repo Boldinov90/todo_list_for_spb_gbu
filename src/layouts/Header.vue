@@ -11,7 +11,10 @@
                   class="search-by-text__icon"
                   src="../assets/icons/search-icon.svg"
                />
-               <div class="search-by-text__input"></div>
+               <MySearchInput
+                  class="search-by-text__input"
+                  :textPlaceholder="'Поиск Имени, статуса или даты'"
+               />
             </div>
          </div>
       </div>
@@ -19,13 +22,15 @@
 </template>
 
 <script>
-import MyTitle from '@/components/header/MyTitle.vue'
+import MyTitle from '@/components/UI/MyTitle.vue'
 import MyCircleAddButton from '@/components/UI/MyCircleAddButton.vue'
+import MySearchInput from '@/components/UI/MySearchInput.vue'
 export default {
    name: 'Header',
    components: {
       MyTitle,
       MyCircleAddButton,
+      MySearchInput,
    },
 }
 </script>
@@ -43,10 +48,15 @@ export default {
          }
       }
       .header__header-filters {
+         margin-top: 30px;
          .header-filters__search-by-text {
+            display: flex;
+            align-items: center;
             .search-by-text__icon {
+               margin-left: 40px;
             }
             .search-by-text__input {
+               margin-left: 16px;
             }
          }
       }

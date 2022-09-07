@@ -19,5 +19,6 @@ export default {
    font-style: normal;
    font-weight: 700;
    line-height: 132%;
+   color: $standart-text-color;
 }
 </style>
