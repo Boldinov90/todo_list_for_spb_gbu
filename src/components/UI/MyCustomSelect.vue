@@ -8,16 +8,16 @@
                src="../../assets/icons/arrow-down.svg"
                alt="arrow"
                class="select__arrow"
-               :class="{ 'select__arrow-open': isSelectOpen }"
-               @click="isSelectOpen = !isSelectOpen"
+               :class="{ 'select__arrow-open': IS_SELECT_OPEN }"
+               @click="openCloseSelect"
             />
          </div>
-         <div class="select__options options" v-if="isSelectOpen">
+         <div class="select__options options" v-if="IS_SELECT_OPEN">
             <div
                class="options__item"
                v-for="option in filterOptionsList"
                :key="option"
-               @click="saveActiveSelect(option)"
+               @click="sortTasksByKey(option)"
             >
                <div class="item__text">
                   {{ option.value }}
@@ -32,9 +32,7 @@
 import { mapGetters, mapActions } from 'vuex'
 export default {
    data() {
-      return {
-         isSelectOpen: false,
-      }
+      return {}
    },
    props: {
       selectLabel: {
@@ -45,34 +43,31 @@ export default {
       },
    },
    methods: {
-      ...mapActions(['SAVE_ACTIVE_SELECT']),
-      // Функция изменения статуса отображения списка
-      toggleVisibleSelectOptions() {
-         // Меняем статус отображения списка
-         this.isSelectOpen = !this.isSelectOpen
-      },
+      ...mapActions([
+         'SAVE_ACTIVE_SELECT',
+         'TOGGLE_STATUS_SELECT_OPEN',
+         'SORT_TASKS_BY_KEY',
+      ]),
       // Функция записи активного пункта всплывающего списка во VUEX
-      saveActiveSelect(option) {
+      sortTasksByKey(option) {
          // Запись активного пункта всплывающего списка во VUEX
          this.SAVE_ACTIVE_SELECT(option)
          // Меняем статус отображения списка
-         this.toggleVisibleSelectOptions()
+         this.TOGGLE_STATUS_SELECT_OPEN()
+         this.SORT_TASKS_BY_KEY()
+         // users.sort((prev, next) => {
+         //    if (prev.name < next.name) return -1
+         //    if (prev.name < next.name) return 1
+         // })
+      },
+      // Функция переключения статуса отображения списка
+      openCloseSelect() {
+         this.TOGGLE_STATUS_SELECT_OPEN()
       },
    },
    computed: {
-      ...mapGetters(['ACTIVE_FILTER_OPTION']),
+      ...mapGetters(['ACTIVE_FILTER_OPTION', 'IS_SELECT_OPEN']),
    },
-   // mounted() {
-   //    if (this.isSelectOpen) {
-   //       document.addEventListener('click', () => {
-   //          this.toggleVisibleSelectOptions()
-   //       })
-   //    }
-   // },
-   // },
-   // beforeDestroy() {
-   //    document.removeEventListener('click', this.toggleVisibleSelectOptions)
-   // },
 }
 </script>
 

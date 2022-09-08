@@ -2,43 +2,43 @@
   "tasks": [
     {
       "id": 1,
-      "checkbox": false,
-      "description": "Размещение новостей на сайте",
+      "checkbox": true,
+      "description": "Внедрение модуля Chat",
       "status": {
-        "name": "active",
-        "value": "В работе"
+        "name": "done",
+        "value": "Выполнено"
       },
-      "date": "22.04.22"
+      "date": "20.02.2022"
     },
     {
       "id": 2,
-      "checkbox": true,
-      "description": "Внедрить Wi-fi для читателей",
-      "status": {
-        "name": "done",
-        "value": "Выполнено"
-      },
-      "date": "25.03.22"
-    },
-    {
-      "id": 3,
       "checkbox": false,
-      "description": "Отредактировать раздел “Доступная среда“",
+      "description": "Форма сброса пароля",
       "status": {
         "name": "active",
         "value": "В работе"
       },
-      "date": "15.03.22"
+      "date": "25.02.2022"
     },
     {
-      "id": 4,
+      "id": 3,
       "checkbox": true,
-      "description": "Презентация “Информационные технологии“",
+      "description": "Скролл в новостях",
       "status": {
         "name": "done",
         "value": "Выполнено"
       },
-      "date": "15.03.22"
+      "date": "01.03.2022"
+    },
+    {
+      "id": 4,
+      "checkbox": false,
+      "description": "Сверстать новый layout",
+      "status": {
+        "name": "active",
+        "value": "В работе"
+      },
+      "date": "07.03.2022"
     },
     {
       "id": 5,
@@ -48,47 +48,57 @@
         "name": "active",
         "value": "В работе"
       },
-      "date": "09.03.22"
+      "date": "09.03.2022"
     },
     {
       "id": 6,
-      "checkbox": true,
-      "description": "Сверстать новый layout",
+      "checkbox": false,
+      "description": "Презентация “Информационные технологии“",
       "status": {
-        "name": "done",
-        "value": "Выполнено"
+        "name": "active",
+        "value": "В работе"
       },
-      "date": "07.03.22"
+      "date": "15.03.2022"
     },
     {
       "id": 7,
-      "checkbox": false,
-      "description": "Скролл в новостях",
-      "status": {
-        "name": "active",
-        "value": "В работе"
-      },
-      "date": "01.03.22"
-    },
-    {
-      "id": 8,
       "checkbox": true,
-      "description": "Форма сброса пароля",
+      "description": "Отредактировать раздел “Доступная среда“",
       "status": {
         "name": "done",
         "value": "Выполнено"
       },
-      "date": "25.02.22"
+      "date": "15.03.2022"
     },
     {
-      "id": 9,
+      "id": 8,
       "checkbox": false,
-      "description": "Внедрение модуля Chat",
+      "description": "Внедрить Wi-fi для читателей",
       "status": {
         "name": "active",
         "value": "В работе"
       },
-      "date": "20.02.22"
+      "date": "25.03.2022"
+    },
+    {
+      "id": 9,
+      "checkbox": true,
+      "description": "Размещение новостей на сайте",
+      "status": {
+        "name": "done",
+        "value": "Выполнено"
+      },
+      "date": "22.04.2022"
+    },
+    {
+      "id": 1662658688855,
+      "checkbox": false,
+      "description": "ыавываыва",
+      "status": {
+        "name": "active",
+        "value": "В работе"
+      },
+      "date": "08.09.2022"
     }
   ]
 }

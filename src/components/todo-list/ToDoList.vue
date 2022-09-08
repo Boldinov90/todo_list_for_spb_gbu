@@ -1,6 +1,6 @@
 <template>
    <div class="todo-list">
-      <ToDoListItem :task="task" v-for="task of TASKS" :key="task" />
+      <ToDoListItem :task="task" v-for="task of TASKS_SANDBOX" :key="task" />
    </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
       ToDoListItem,
    },
    computed: {
-      ...mapGetters(['TASKS']),
+      ...mapGetters(['TASKS_SANDBOX']),
    },
 }
 </script>

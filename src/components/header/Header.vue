@@ -2,7 +2,7 @@
    <div class="header container">
       <div class="header__header-top">
          <MyTitle class="header-top__title" :textTitle="'To do list'" />
-         <MyCircleAddButton />
+         <MyCircleAddButton @click="openFormAddTask" />
       </div>
       <div class="header__header-filters">
          <div class="header-filters__search-by-text">
@@ -13,6 +13,7 @@
             <MySearchInput
                class="search-by-text__input"
                :textPlaceholder="'Поиск Имени, статуса или даты'"
+               v-model="searchInputValue"
             />
          </div>
          <div class="header-filters__filter-status-or-date">
@@ -27,25 +28,46 @@
          <div class="header-tasks-list__item status">Статус</div>
          <div class="header-tasks-list__item date">Дата</div>
       </div>
+      <!-- <MyFormAddNewTask v-if="isFormAddTaskOpen" /> -->
    </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import MyTitle from '@/components/UI/MyTitle.vue'
 import MyCircleAddButton from '@/components/UI/MyCircleAddButton.vue'
 import MySearchInput from '@/components/UI/MySearchInput.vue'
 import MyCustomSelect from '@/components/UI/MyCustomSelect.vue'
+// import MyFormAddNewTask from '@/components/UI/MyFormAddNewTask.vue'
+
 export default {
    name: 'Header',
+   data() {
+      return {
+         searchInputValue: '',
+         // isFormAddTaskOpen: true,
+      }
+   },
    components: {
       MyTitle,
       MyCircleAddButton,
       MySearchInput,
       MyCustomSelect,
+      // MyFormAddNewTask,
+   },
+   methods: {
+      ...mapActions(['GET_TASKS_BY_TEXT', 'TOGGLE_STATUS_FORM_ADD_TASK_OPEN']),
+      openFormAddTask() {
+         this.TOGGLE_STATUS_FORM_ADD_TASK_OPEN()
+      },
    },
    computed: {
       ...mapGetters(['FILTER_OPTIONS_LIST']),
+   },
+   watch: {
+      searchInputValue() {
+         this.GET_TASKS_BY_TEXT(this.searchInputValue)
+      },
    },
 }
 </script>
@@ -53,6 +75,7 @@ export default {
 <style lang="scss" scoped>
 .header {
    background-color: white;
+   // padding-top: 100px;
    .header__header-top {
       display: flex;
       justify-content: space-between;
