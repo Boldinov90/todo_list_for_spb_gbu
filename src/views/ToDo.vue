@@ -25,8 +25,11 @@ export default {
    },
    methods: {
       ...mapActions(['TOGGLE_STATUS_FORM_ADD_TASK_OPEN', 'ADD_NEW_TASK']),
+      // Функция добавления новой задачи
       addNewTask(data) {
+         // Проверка, если поле ввода не пустое (защита от добавления пустой задачи)
          if (data.inputValue.trimStart() !== '') {
+            // Создание объекта с новой задачей
             const newTask = {
                id: new Date().valueOf(),
                checkbox: false,
@@ -37,7 +40,9 @@ export default {
                },
                date: new Date().toLocaleDateString(),
             }
+            // Добавление новой задачи во VUEX и отправка на сервер
             this.ADD_NEW_TASK(newTask)
+            // Закрытие формы добавления новой задачи
             this.TOGGLE_STATUS_FORM_ADD_TASK_OPEN()
          }
       },

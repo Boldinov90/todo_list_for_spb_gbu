@@ -19,7 +19,11 @@
             v-model="inputValue"
          />
          <div class="form__btn">
-            <MyButton :textButton="'Создать'" class="btn" @click.prevent="addNewTask" />
+            <MyButton
+               :textButton="'Создать'"
+               class="btn"
+               @click.prevent="addNewTask"
+            />
          </div>
       </form>
    </div>
@@ -44,13 +48,17 @@ export default {
    },
    methods: {
       ...mapActions(['TOGGLE_STATUS_FORM_ADD_TASK_OPEN']),
+      // Изменение статуса отображения формы
       closeFormAddTask() {
+         // Закрытие формы
          this.TOGGLE_STATUS_FORM_ADD_TASK_OPEN()
       },
+      // Проброс события и передача значения инпута родителю
       addNewTask() {
          this.$emit('addNewTask', {
             inputValue: this.inputValue,
          })
+         // Очищаем поле ввода
          this.inputValue = ''
       },
    },

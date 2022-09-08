@@ -42,7 +42,9 @@ export default {
    },
    methods: {
       ...mapActions(['CHANGE_TASK_STATUS']),
+      // Функция изменения статуса задачи во VUEX и на сервере
       changeTasksStatus(task) {
+         // Изменение статуса задачи
          this.CHANGE_TASK_STATUS(task)
       },
    },
@@ -96,15 +98,11 @@ export default {
          border: 1px solid $done-task-text-color;
       }
    }
-   // .description {
-   // }
    .status {
       color: $active-task-text-color;
    }
    .status-done {
       color: $done-task-text-color;
    }
-   // .date {
-   // }
 }
 </style>

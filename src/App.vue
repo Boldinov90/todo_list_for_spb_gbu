@@ -14,16 +14,21 @@ export default {
       ToDo,
    },
    methods: {
-      ...mapActions(['GET_ALL_TASKS']),
+      ...mapActions([
+         'GET_ALL_TASKS',
+         'SET_DATA_FROM_LOCALSTORAGE_TO_STATE',
+         'SORT_TASKS_BY_KEY',
+      ]),
    },
-   beforeMount() {
-      this.GET_ALL_TASKS()
+   async beforeMount() {
+      // Записываем данные из LocalStorage во VUEX
+      await this.SET_DATA_FROM_LOCALSTORAGE_TO_STATE()
+      // Получения всех задач с сервера
+      await this.GET_ALL_TASKS()
+      // Сортировка задач по ключу селекта
+      await this.SORT_TASKS_BY_KEY()
    },
 }
 </script>
 
-<style lang="scss">
-// .app {
-//    position: relative;
-// }
-</style>
+<style lang="scss"></style>

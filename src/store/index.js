@@ -19,58 +19,73 @@ export default createStore({
          name: 'date',
          value: 'Дата'
       },
-      isZeroTasks: {
-         // isActiveTasksZero: false,
-         // isDoneTasksZero: false,
-         isSearchTasksZero: false
-      },
       isFormAddTaskOpen: false,
       isSelectOpen: false
    },
    mutations: {
+      // Получение и запись данных из localStorage
+      SET_DATA_FROM_LOCALSTORAGE_TO_STATE(state, lS) {
+         state.activeFilterOption = lS.activeFilterOption
+      },
+      // Запись активного пунка селекта
       SAVE_ACTIVE_SELECT(state, activeSelect) {
          state.activeFilterOption = activeSelect
+         const lS = {
+            activeFilterOption: state.activeFilterOption
+         }
+         // Записываем данные в LocalStorage
+         localStorage.setItem('appBoldinov', JSON.stringify(lS))
       },
       // Получение всех задач с сервера
       GET_ALL_TASKS(state, response) {
+         // Запись данных в основной массив
          state.tasks = response.data.reverse()
+         // Запись данных в массив-песочницу
          state.tasksSandBox = state.tasks
       },
       // Изменение статуса задачи
       CHANGE_TASK_STATUS(state, task) {
+         // Поиск и изменения статуса задачи по id 
          state.tasks.find((item) => item.id === task.id).checkbox = !task.checkbox
+         // Если значение checkbox - true
          if (state.tasks.find((item) => item.id === task.id).checkbox) {
+            // Поиск и изменения статуса на DONE
             state.tasks.find((item) => item.id === task.id).status = { name: 'done', value: 'Выполнено' }
          } else {
+            // Поиск и изменения статуса задачи на ACTIVE
             state.tasks.find((item) => item.id === task.id).status = { name: 'active', value: 'В работе' }
          }
-
       },
       // Поиск по тексту, дате и статусу задачи
-      GET_TASKS_BY_TEXT(state, text) {
+      SEARCH_TASKS_BY_TEXT(state, text) {
+         // Запись массива с задачами в массив-песочницу
          state.tasksSandBox = state.tasks
+         // Удаление значений, не соответствующих критериям поиска (остаются совпадения по описанию, дате и статусу)
          state.tasksSandBox = state.tasksSandBox.filter(element => {
             return element.description.toLowerCase().includes(text)
                || element.date.toLowerCase().includes(text)
                || element.status.value.toLowerCase().includes(text)
          })
-         
       },
       // Сортировка задач по значению
-      SORT_TASKS_BY_KEY(state){
+      SORT_TASKS_BY_KEY(state) {
          state.tasksSandBox = state.tasksSandBox.sort((a, b) => {
             if (state.activeFilterOption.name === 'status') {
                if (a.status.name < b.status.name) return -1
                if (a.status.name < b.status.name) return 1
             }
-            a = a.date.split('.').reverse().join('');
-            b = b.date.split('.').reverse().join('');
-            return a < b ? 1 : a > b ? -1 : 0;
+            if (state.activeFilterOption.name === 'date') {
+               a = a.date.split('.').reverse().join('');
+               b = b.date.split('.').reverse().join('');
+               return a < b ? 1 : a > b ? -1 : 0;
+            }
          })
       },
       // Добавление новой задачи
       ADD_NEW_TASK(state, newTask) {
+         // Добавление задачи в начало массива
          state.tasks.unshift(newTask)
+         // Запись обновленного массива в массив-песочницу
          state.tasksSandBox = state.tasks
       },
       // Переключение статуса открытия формы добавления новой задачи
@@ -83,6 +98,23 @@ export default createStore({
       }
    },
    actions: {
+      // Получение данных из localStorage
+      SET_DATA_FROM_LOCALSTORAGE_TO_STATE({ commit }) {
+         let lS = JSON.parse(localStorage.getItem('appBoldinov'))
+         if (!lS) {
+            lS = {
+               activeFilterOption: {
+                  name: 'date',
+                  value: 'Дата'
+               },
+            }
+            localStorage.setItem('appBoldinov', JSON.stringify(lS))
+         } else {
+            commit('SET_DATA_FROM_LOCALSTORAGE_TO_STATE', lS)
+            return lS
+         }
+      },
+      // Запись активного пунка селекта
       SAVE_ACTIVE_SELECT({ commit }, activeSelect) {
          commit('SAVE_ACTIVE_SELECT', activeSelect)
       },
@@ -104,11 +136,11 @@ export default createStore({
          })
       },
       // Поиск по тексту, дате и статусу задачи
-      async GET_TASKS_BY_TEXT({ commit }, text) {
-         commit('GET_TASKS_BY_TEXT', text)
+      async SEARCH_TASKS_BY_TEXT({ commit }, text) {
+         commit('SEARCH_TASKS_BY_TEXT', text)
       },
       // Сортировка задач по значению
-      SORT_TASKS_BY_KEY({commit}){
+      SORT_TASKS_BY_KEY({ commit }) {
          commit('SORT_TASKS_BY_KEY')
       },
       // Добавление новой задачи
@@ -126,9 +158,11 @@ export default createStore({
       }
    },
    getters: {
+      // Список селекта
       FILTER_OPTIONS_LIST(state) {
          return state.filterOptionsList
       },
+      // Активный пункт селекта
       ACTIVE_FILTER_OPTION(state) {
          return state.activeFilterOption
       },
@@ -140,12 +174,13 @@ export default createStore({
       TASKS_SANDBOX(state) {
          return state.tasksSandBox
       },
+      // Статус отображения формы добавления новой задачи
       IS_FORM_ADD_TASK_OPEN(state) {
          return state.isFormAddTaskOpen
       },
+      // Статус открытия списка селекта
       IS_SELECT_OPEN(state) {
          return state.isSelectOpen
       }
-
    }
 })

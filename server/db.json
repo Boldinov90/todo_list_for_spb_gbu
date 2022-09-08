@@ -1,104 +1,94 @@
 {
-  "tasks": [
-    {
-      "id": 1,
-      "checkbox": true,
-      "description": "Внедрение модуля Chat",
-      "status": {
-        "name": "done",
-        "value": "Выполнено"
+   "tasks": [
+      {
+         "id": 1,
+         "checkbox": true,
+         "description": "Внедрение модуля Chat",
+         "status": {
+            "name": "done",
+            "value": "Выполнено"
+         },
+         "date": "20.02.2022"
       },
-      "date": "20.02.2022"
-    },
-    {
-      "id": 2,
-      "checkbox": false,
-      "description": "Форма сброса пароля",
-      "status": {
-        "name": "active",
-        "value": "В работе"
+      {
+         "id": 2,
+         "checkbox": false,
+         "description": "Форма сброса пароля",
+         "status": {
+            "name": "active",
+            "value": "В работе"
+         },
+         "date": "25.02.2022"
       },
-      "date": "25.02.2022"
-    },
-    {
-      "id": 3,
-      "checkbox": true,
-      "description": "Скролл в новостях",
-      "status": {
-        "name": "done",
-        "value": "Выполнено"
+      {
+         "id": 3,
+         "checkbox": true,
+         "description": "Скролл в новостях",
+         "status": {
+            "name": "done",
+            "value": "Выполнено"
+         },
+         "date": "01.03.2022"
       },
-      "date": "01.03.2022"
-    },
-    {
-      "id": 4,
-      "checkbox": false,
-      "description": "Сверстать новый layout",
-      "status": {
-        "name": "active",
-        "value": "В работе"
+      {
+         "id": 4,
+         "checkbox": false,
+         "description": "Сверстать новый layout",
+         "status": {
+            "name": "active",
+            "value": "В работе"
+         },
+         "date": "07.03.2022"
       },
-      "date": "07.03.2022"
-    },
-    {
-      "id": 5,
-      "checkbox": false,
-      "description": "Счётчики — внедрить дизайн",
-      "status": {
-        "name": "active",
-        "value": "В работе"
+      {
+         "id": 5,
+         "checkbox": false,
+         "description": "Счётчики — внедрить дизайн",
+         "status": {
+            "name": "active",
+            "value": "В работе"
+         },
+         "date": "09.03.2022"
       },
-      "date": "09.03.2022"
-    },
-    {
-      "id": 6,
-      "checkbox": false,
-      "description": "Презентация “Информационные технологии“",
-      "status": {
-        "name": "active",
-        "value": "В работе"
+      {
+         "id": 6,
+         "checkbox": false,
+         "description": "Презентация “Информационные технологии“",
+         "status": {
+            "name": "active",
+            "value": "В работе"
+         },
+         "date": "15.03.2022"
       },
-      "date": "15.03.2022"
-    },
-    {
-      "id": 7,
-      "checkbox": true,
-      "description": "Отредактировать раздел “Доступная среда“",
-      "status": {
-        "name": "done",
-        "value": "Выполнено"
+      {
+         "id": 7,
+         "checkbox": true,
+         "description": "Отредактировать раздел “Доступная среда“",
+         "status": {
+            "name": "done",
+            "value": "Выполнено"
+         },
+         "date": "15.03.2022"
       },
-      "date": "15.03.2022"
-    },
-    {
-      "id": 8,
-      "checkbox": false,
-      "description": "Внедрить Wi-fi для читателей",
-      "status": {
-        "name": "active",
-        "value": "В работе"
+      {
+         "id": 8,
+         "checkbox": false,
+         "description": "Внедрить Wi-fi для читателей",
+         "status": {
+            "name": "active",
+            "value": "В работе"
+         },
+         "date": "25.03.2022"
       },
-      "date": "25.03.2022"
-    },
-    {
-      "id": 9,
-      "checkbox": true,
-      "description": "Размещение новостей на сайте",
-      "status": {
-        "name": "done",
-        "value": "Выполнено"
-      },
-      "date": "22.04.2022"
-    },
-    {
-      "id": 1662658688855,
-      "checkbox": false,
-      "description": "ыавываыва",
-      "status": {
-        "name": "active",
-        "value": "В работе"
-      },
-      "date": "08.09.2022"
-    }
-  ]
+      {
+         "id": 9,
+         "checkbox": true,
+         "description": "Размещение новостей на сайте",
+         "status": {
+            "name": "done",
+            "value": "Выполнено"
+         },
+         "date": "22.04.2022"
+      }
+   ]
 }

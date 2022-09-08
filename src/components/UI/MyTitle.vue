@@ -15,10 +15,6 @@ export default {
 
 <style lang="scss" scoped>
 .text-title {
-   font-family: 'Montserrat', sans-serif;
-   font-style: normal;
-   font-weight: 700;
-   line-height: 132%;
-   color: $standart-text-color;
+   @extend %styleTitleText;
 }
 </style>

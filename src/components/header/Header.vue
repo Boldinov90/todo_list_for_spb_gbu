@@ -28,7 +28,6 @@
          <div class="header-tasks-list__item status">Статус</div>
          <div class="header-tasks-list__item date">Дата</div>
       </div>
-      <!-- <MyFormAddNewTask v-if="isFormAddTaskOpen" /> -->
    </div>
 </template>
 
@@ -38,14 +37,12 @@ import MyTitle from '@/components/UI/MyTitle.vue'
 import MyCircleAddButton from '@/components/UI/MyCircleAddButton.vue'
 import MySearchInput from '@/components/UI/MySearchInput.vue'
 import MyCustomSelect from '@/components/UI/MyCustomSelect.vue'
-// import MyFormAddNewTask from '@/components/UI/MyFormAddNewTask.vue'
 
 export default {
    name: 'Header',
    data() {
       return {
          searchInputValue: '',
-         // isFormAddTaskOpen: true,
       }
    },
    components: {
@@ -53,11 +50,15 @@ export default {
       MyCircleAddButton,
       MySearchInput,
       MyCustomSelect,
-      // MyFormAddNewTask,
    },
    methods: {
-      ...mapActions(['GET_TASKS_BY_TEXT', 'TOGGLE_STATUS_FORM_ADD_TASK_OPEN']),
+      ...mapActions([
+         'SEARCH_TASKS_BY_TEXT',
+         'TOGGLE_STATUS_FORM_ADD_TASK_OPEN',
+      ]),
+      // Функция изменения статуса открытия/закрытия формы добавления задачи
       openFormAddTask() {
+         // Изменение статуса открытия/закрытия формы добавления задачи
          this.TOGGLE_STATUS_FORM_ADD_TASK_OPEN()
       },
    },
@@ -65,8 +66,10 @@ export default {
       ...mapGetters(['FILTER_OPTIONS_LIST']),
    },
    watch: {
+      // Отслеживание изменения переменной (инпут поиска)
       searchInputValue() {
-         this.GET_TASKS_BY_TEXT(this.searchInputValue)
+         // Поиск задач по тексту
+         this.SEARCH_TASKS_BY_TEXT(this.searchInputValue)
       },
    },
 }
@@ -75,7 +78,6 @@ export default {
 <style lang="scss" scoped>
 .header {
    background-color: white;
-   // padding-top: 100px;
    .header__header-top {
       display: flex;
       justify-content: space-between;
@@ -102,8 +104,6 @@ export default {
             width: 100%;
          }
       }
-      // .header-filters__filter-status-or-date {
-      // }
    }
    .header__header-tasks-list {
       margin-top: 30px;
@@ -118,12 +118,6 @@ export default {
          align-items: center;
          @extend %styleStandartText;
       }
-      // .description {
-      // }
-      // .status {
-      // }
-      // .date {
-      // }
    }
 }
 </style>

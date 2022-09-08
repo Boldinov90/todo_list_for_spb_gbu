@@ -47,21 +47,21 @@ export default {
          'SAVE_ACTIVE_SELECT',
          'TOGGLE_STATUS_SELECT_OPEN',
          'SORT_TASKS_BY_KEY',
+         'SET_DATA_FROM_LOCALSTORAGE_TO_STATE',
       ]),
       // Функция записи активного пункта всплывающего списка во VUEX
       sortTasksByKey(option) {
+         this.SET_DATA_FROM_LOCALSTORAGE_TO_STATE()
          // Запись активного пункта всплывающего списка во VUEX
          this.SAVE_ACTIVE_SELECT(option)
          // Меняем статус отображения списка
          this.TOGGLE_STATUS_SELECT_OPEN()
+         // Сортировка задач по ключу (активный пункт фильтра записан во VUEX)
          this.SORT_TASKS_BY_KEY()
-         // users.sort((prev, next) => {
-         //    if (prev.name < next.name) return -1
-         //    if (prev.name < next.name) return 1
-         // })
       },
       // Функция переключения статуса отображения списка
       openCloseSelect() {
+         // Переключение статуса отображения списка
          this.TOGGLE_STATUS_SELECT_OPEN()
       },
    },
